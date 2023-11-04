@@ -7,13 +7,20 @@ import { useRef } from "react";
 import AreaBottomSideNavbar from "../side-navbar/area-bottomsidenavbar-component";
 import { AreaMap } from "../maps/area-map";
 import Spinner from "../loading";
+import { useSelector } from "react-redux";
 
 export const AreaMapWorkspan = () => {
-  const viewRef = useRef();
+  const isAreaSideNavOpen = useSelector(
+    (state: any) => state.mapSelectorReducer.isAreaSideNavOpen
+  );
+
+  const viewRef = useRef(null);
   return (
-    <div>
+    <div className="flex">
       <div className="flex flex-col">
-        <div className="fixed top-15 left-0 z-40 ">
+        <div
+          className={`${isAreaSideNavOpen ? "z-40" : "fixed top-15 left-0 z-40"}`}
+        >
           <div className="mt-24">
             <AreaBottomSideNavbar />
           </div>

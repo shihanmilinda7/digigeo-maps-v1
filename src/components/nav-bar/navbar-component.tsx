@@ -81,7 +81,7 @@ const HomeNavbar = () => {
           <span className="pl-1 mx-auto text-xl font-black leading-none text-gray-900 dark:text-white select-none  flex items-center justify-center">
             DigiGeo<span className="text-indigo-600">Maps</span>
           </span>
-          {/* <img src="../logo.png"></img> */}
+          {/* <img src="/logo.png"></img> */}
         </div>
 
         <svg

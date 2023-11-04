@@ -9,7 +9,7 @@ import { CommodityMap } from "../maps/commodity-map";
 import Spinner from "../loading";
 
 export const CommodityMapWorkspan = () => {
-  const viewRef = useRef();
+  const viewRef = useRef(null);
   return (
     <div>
       <div className="flex flex-col">

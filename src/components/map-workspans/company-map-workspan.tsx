@@ -9,7 +9,7 @@ import { CompanyMap } from "../maps/company-map";
 import Spinner from "../loading";
 
 export const CompanyMapWorkspan = () => {
-  const viewRef = useRef();
+  const viewRef = useRef(null);
   return (
     <div>
       <div className="flex flex-col">

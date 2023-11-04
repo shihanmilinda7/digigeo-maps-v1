@@ -58,26 +58,29 @@ const CompanyBottomSideNavbar = () => {
   const [open, setOpen] = useState(true);
   return (
     <section className="flex gap-6">
-      <div
-        className={`
-        ${open ? "bg-white dark:bg-black" : ""} 
-        text-gray-800 dark:text-white 
-        h-[90vh] m-2
-        ${open ? "w-96" : "w-12 px-1"} 
-        ${open ? "w-96 pr-2" : ""} 
-        duration-500`}
-      >
-        <div className="py-3 flex">
-          <span
-            className={
-              open
-                ? "mx-auto text-xl font-black leading-none text-gray-800 select-none dark:text-white"
-                : "hidden"
-            }
-          >
-            COMPANY MAP
-          </span>
-          <div className="flex flex-col gap-4">
+      <div className={`duration-500 flex w-auto`}>
+        <div
+          className={`
+      ${open ? "bg-white dark:bg-black " : ""} 
+      h-[90vh] ml-2 mt-2
+      ${open ? "w-96 mr-2" : "w-0"} 
+      duration-500`}
+        >
+          <div className="py-3 flex">
+            <span
+              className={
+                open
+                  ? "mx-auto text-xl font-black leading-none text-gray-800 select-none dark:text-white"
+                  : "hidden"
+              }
+            >
+              COMPANY MAP
+            </span>
+          </div>
+          <div className="mt-4 flex flex-col gap-4 relative"></div>
+        </div>
+        <div className="w-12">
+          <div className="flex flex-col gap-4 mt-2">
             <Button variant="outline" size="icon">
               <BsFillArrowLeftSquareFill
                 size={26}
@@ -95,36 +98,6 @@ const CompanyBottomSideNavbar = () => {
               <AiFillMinusSquare className={`cursor-pointer h-6 w-6`} />
             </Button>
           </div>
-        </div>
-        <div className="mt-4 flex flex-col gap-4 relative">
-          {/* {menus?.map((menu, i) => (
-            <button
-              onClick={() => navButtonHandler(menu?.link)}
-              key={i}
-              className={`${
-                currentRoute === menu?.link ? "bg-gray-600 " : ""
-              } group flex items-center text-sm gap-3.5 font-medium p-2 hover:bg-gray-600 rounded-md`}
-            >
-              <div>{React.createElement(menu?.icon, { size: "20" })}</div>
-              <h2
-                style={{
-                  transitionDelay: `${i + 3}00ms`,
-                }}
-                className={`whitespace-pre duration-500 ${
-                  !open && "opacity-0 translate-x-28 overflow-hidden"
-                }`}
-              >
-                {menu?.name}
-              </h2>
-              <h2
-                className={`${
-                  open && "hidden"
-                } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit  `}
-              >
-                {menu?.name}
-              </h2>
-            </button>
-          ))} */}
         </div>
       </div>
     </section>

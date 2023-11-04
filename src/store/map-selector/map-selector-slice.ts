@@ -2,10 +2,12 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface MapSelectorState {
   selectedMap: string;
+  isAreaSideNavOpen: boolean;
 }
 
 const initialState: MapSelectorState = {
   selectedMap: "Area",
+  isAreaSideNavOpen: true,
 };
 
 const mapSelectorSlice = createSlice({
@@ -15,9 +17,12 @@ const mapSelectorSlice = createSlice({
     setSelectedMap: (state, action) => {
       state.selectedMap = action.payload;
     },
+    setIsAreaSideNavOpen: (state, action) => {
+      state.isAreaSideNavOpen = action.payload;
+    },
   },
 });
 
-export const { setSelectedMap } = mapSelectorSlice.actions;
+export const { setSelectedMap, setIsAreaSideNavOpen } = mapSelectorSlice.actions;
 
 export default mapSelectorSlice.reducer;

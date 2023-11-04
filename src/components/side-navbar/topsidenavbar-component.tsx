@@ -50,7 +50,11 @@ const TopSideNavbar = () => {
         <div className="flex gap-2 w-full">
           <Button
             variant="outline"
-            className="w-full flex gap-1"
+            className={`w-full flex gap-1 ${
+              activeButton === "Area"
+                ? "bg-black text-white"
+                : "bg-white text-black"
+            }`}
             onClick={() => mapButtonHAndler("Area")}
           >
             <MdLocationOn className="h-4 w-4" />
@@ -58,7 +62,11 @@ const TopSideNavbar = () => {
           </Button>
           <Button
             variant="outline"
-            className="w-full flex gap-1"
+            className={`w-full flex gap-1 ${
+              activeButton === "Company"
+                ? "bg-black text-white"
+                : "bg-white text-black"
+            }`}
             onClick={() => mapButtonHAndler("Company")}
           >
             <BsFillBuildingsFill className="h-4 w-4" />
@@ -66,7 +74,11 @@ const TopSideNavbar = () => {
           </Button>
           <Button
             variant="outline"
-            className="w-full flex gap-1"
+            className={`w-full flex gap-1 ${
+              activeButton === "Commodity"
+                ? "bg-black text-white"
+                : "bg-white text-black"
+            }`}
             onClick={() => mapButtonHAndler("Commodity")}
           >
             <AiTwotoneGold className="h-4 w-4" />
@@ -74,21 +86,62 @@ const TopSideNavbar = () => {
           </Button>
         </div>
         <div>
-          <Input
-            type="text"
-            placeholder="Search area"
-            style={{ display: activeButton === "Area" ? "block" : "none" }}
-          />
-          <Input
-            type="text"
-            placeholder="Search company"
+          <div style={{ display: activeButton === "Area" ? "block" : "none" }}>
+            <Input list="area" type="text" placeholder="Search area" />
+            <datalist
+              id="area"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: "100%",
+                marginLeft: "10px",
+              }}
+            >
+              <option value="Area 1" />
+              <option value="Area 2" />
+              <option value="Area 3" />
+            </datalist>
+          </div>
+          <div
             style={{ display: activeButton === "Company" ? "block" : "none" }}
-          />
-          <Input
-            type="text"
-            placeholder="Search commodity"
-            style={{ display: activeButton === "Commodity" ? "block" : "none" }}
-          />
+          >
+            <Input list="company" type="text" placeholder="Search company" />
+            <datalist
+              id="company"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+              }}
+            >
+              <option value="Company 1" />
+              <option value="Company 2" />
+              <option value="Company 3" />
+            </datalist>
+          </div>
+          <div
+            style={{
+              display: activeButton === "Commodity" ? "block" : "none",
+            }}
+          >
+            <Input
+              list="commodity"
+              type="text"
+              placeholder="Search commodity"
+            />
+            <datalist
+              id="commodity"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+              }}
+            >
+              <option value="commodity 1" />
+              <option value="commodity 2" />
+              <option value="commodity 3" />
+            </datalist>
+          </div>
         </div>
       </div>
     </div>
